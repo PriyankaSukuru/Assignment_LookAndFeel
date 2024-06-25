@@ -1,1 +1,86 @@
-<!--Your HTML code here-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiki's Clothing Store</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+         <div class="header-content">
+        <h1>Kiki's Clothing Store</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            </ul>
+            <ul class="right-nav">
+                <li><a href="Account.html">Profile</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div class="slides">
+                <div class="slide"><img src="https://d3jmn01ri1fzgl.cloudfront.net/photoadking/webp_thumbnail/cold-turkey-and-tea-fashion-youtube-banner-template-8smgtf25588414.webp" alt="Banner 2"></div>
+                <div class="slide"><img src="https://marketplace.canva.com/EAFVHstxnwk/1/0/1600w/canva-beige-aesthetic-exclusive-fashion-wear-collection-clothing-banner-BZb4KkCdNP0.jpg" alt="Banner 3"></div>
+                <div class="slide"><img src="https://marketplace.canva.com/EAFGKRRskMs/1/0/1600w/canva-brown-and-beige-minimalist-fashion-banner-lYcbGpUSVGo.jpg" alt="Banner 4"></div>
+                <div class="slide"><img src="https://t4.ftcdn.net/jpg/06/41/86/93/360_F_641869325_Y5VvhLoAcfWCM5JBVcyNTPL4f2J26NHF.jpg" alt="Banner 1"></div>
+            </div>
+            <!-- <div class="arrows">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div> -->
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+        <section class="categories">
+            <div class="category-icon">
+                <img src="https://www.girlsharestips.com/wp-content/uploads/shein-summer-dresses-66.jpg" class="category-image">
+                <a href="women.html">
+                    <i class="fas fa-female"></i>
+                </a>
+                <a href="women.html" class="category-link">
+                    <h2>Women</h2>
+                </a>
+            </div>
+            <div class="category-icon">
+                <img src="https://www.theknot.com/tk-media/images/1f37ea18-e0f9-4886-ad75-16ccd8f912dd.jpg" class="category-image">
+                <a href="men.html">
+                    <i class="fas fa-male"></i>
+                </a>
+                <a href="men.html" class="category-link">
+                    <h2>Men</h2>
+                </a>
+            </div>
+            <div class="category-icon">
+                <img src="https://i.pinimg.com/originals/5a/12/f8/5a12f8fb3dc7298745e1bee0a74dacd6.jpg" class="category-image">
+                <a href="kids.html">
+                    <i class="fas fa-kids"></i>
+                </a>
+                <a href="kids.html" class="category-link">
+                    <h2>Kids</h2>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kiki's Clothing Store. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

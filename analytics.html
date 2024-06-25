@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics - Clothing Store</title>
+    <link rel="stylesheet" href="analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Kiki's Clothing Store</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Data Analytics</h2>
+        <p>This chart shows the number of items sold and total sales amount for each product.</p>
+        <canvas id="productChart"></canvas>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Clothing Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('productChart').getContext('2d');
+        const productChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Women Product 1', 'Women Product 2', 'Women Product 3', 'Women Product 4', 'Women Product 5', 
+                    'Women Product 6', 'Women Product 7', 'Women Product 8', 'Women Product 9', 'Women Product 10',
+                    'Men Product 1', 'Men Product 2', 'Men Product 3', 'Men Product 4', 'Men Product 5',
+                    'Men Product 6', 'Men Product 7', 'Men Product 8', 'Men Product 9', 'Men Product 10'
+                ],
+                datasets: [
+                    {
+                        label: 'Number of Items Sold',
+                        data: [
+                            30, 45, 50, 40, 35, 25, 20, 55, 60, 65,
+                            40, 35, 50, 45, 30, 55, 60, 65, 25, 20
+                        ],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Total Sales Amount ($)',
+                        data: [
+                            600, 1125, 1500, 1400, 1400, 1125, 1000, 3025, 3600, 4225,
+                            1200, 1225, 2000, 2025, 1500, 3025, 3600, 4225, 1750, 1500
+                        ],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                if (value % 1 === 0) {
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            maxRotation: 90,
+                            minRotation: 45,
+                            autoSkip: false
+                        }
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                if (tooltipItem.dataset.label === 'Total Sales Amount ($)') {
+                                    return `Total Sales Amount: $${tooltipItem.raw}`;
+                                } else {
+                                    return `Number of Items Sold: ${tooltipItem.raw}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
